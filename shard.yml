@@ -1,0 +1,13 @@
+name: airtable
+version: 0.1.0
+
+authors:
+  - maggie <mang@mang.se>
+
+dependencies:
+  cache_hash:
+    github: samueleaton/cache-hash
+
+crystal: 0.30.1
+
+license: MIT
