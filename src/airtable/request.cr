@@ -124,5 +124,13 @@ module Airtable
       Airtable.config.cache.set(uri.to_s, json.to_s)
       return json
     end
+
+    def self.delete(table : String, id : String)
+      uri = Airtable.config.base_uri.dup
+      uri.path += "%s/%s" % [table, id]
+      json = self.delete_api(uri, Airtable.config.headers)
+      Airtable.config.cache.set(uri.to_s, nil.to_s)
+      return true
+    end
   end
 end

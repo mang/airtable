@@ -154,9 +154,6 @@ Cache is refreshed on entry update.
    Airtable.config.cache = CacheHash(String).new(30.days),
    ```
 
-## TODO
-- Delete records
-
 ## Development
 
 TODO: Write development instructions here

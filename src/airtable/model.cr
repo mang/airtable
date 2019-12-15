@@ -72,6 +72,11 @@ module Airtable
           return record.update
         end
 
+        def delete
+          return false unless @id
+          {{@type.name}}.delete(@id.to_s)
+        end
+
       end
 
       def self.create(**params)
@@ -94,6 +99,9 @@ module Airtable
         return {{@type.name}}::Record.from_json(json)
       end
 
+      def self.delete(id)
+        Airtable::Request.delete({{table}}, id)
+      end
 
       def self.new(**params)
         {{@type.name}}.from_json(%(#{params.to_json}))
